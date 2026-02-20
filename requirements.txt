@@ -11,4 +11,4 @@ pyserial
 torch
 
 # 5. Numerical operations
-numpy
+numpy 
