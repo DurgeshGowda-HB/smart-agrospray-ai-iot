@@ -1,0 +1,14 @@
+# 1. For YOLOv11 model
+ultralytics 
+
+# 2. For camera and image processing
+opencv-python
+
+# 3. Bluetooth communication
+pyserial
+
+# 4. Backend for YOLO
+torch
+
+# 5. Numerical operations
+numpy
