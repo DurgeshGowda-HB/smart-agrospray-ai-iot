@@ -6,10 +6,11 @@
 <p>Smart AgroSpray is an AI-powered precision agriculture system that detects tomato leaf diseases using YOLOv11 and automatically triggers pesticide spraying through an IoT-enabled robotic platform.</p>
 
 ## 🎯 Objectives
-- Real-time disease detection
-- Automated pesticide spraying
-- Reduced chemical wastage
-- Sustainable farming solution
+<ul>
+    <li>Real-time disease detection</li>                         
+                            - Automated pesticide spraying
+                            - Reduced chemical wastage
+                            - Sustainable farming solution
 
 ## 🛠 Tech Stack
 - Python
