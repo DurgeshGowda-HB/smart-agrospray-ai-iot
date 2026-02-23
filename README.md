@@ -1,4 +1,4 @@
-# Smart AgroSpray 🌱🤖
+# Smart AgroSpray 🌱🤖  
 
 AI-Driven Precision Pesticide Spraying using YOLO and IoT
 
