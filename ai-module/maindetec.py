@@ -3,31 +3,36 @@ from ultralytics import YOLO
 import serial
 import time
 
-# Serial Setup 
-ser = serial.Serial('COM7', 9600, timeout=1)
-time.sleep(2)
-
-# Load YOLO Model
-model = YOLO("best.pt")
-
-cap = cv2.VideoCapture(0)
-
-if not cap.isOpened():
-    print("Error: Could not access camera.")
-    exit()
-
 CONFIDENCE_THRESHOLD = 0.7
-last_detected_state = None
+SERIAL_PORT = 'COM7'
+BAUD_RATE = 9600
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        break
 
+def initialize_serial():
+    ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+    time.sleep(2)
+    return ser
+
+
+def initialize_camera():
+    cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        print("Error: Could not access camera.")
+        exit()
+    return cap
+
+
+def load_model():
+    return YOLO("best.pt")
+
+
+def process_frame(frame, model):
     results = model.predict(source=frame, conf=CONFIDENCE_THRESHOLD, save=False)
     result = results[0]
-    boxes = result.boxes
+    return result.boxes
 
+
+def draw_boxes(frame, boxes, model):
     current_state = None
 
     if boxes is not None:
@@ -45,21 +50,43 @@ while True:
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6,
                         (0, 255, 0), 2)
 
-    # Decision + Serial Logic
-    if current_state == "Diseased" and last_detected_state != "Diseased":
-        print("⚠ Diseased leaf detected → Sending signal")
-        ser.write(b'1')
+    return current_state
 
-    if current_state is None and last_detected_state is not None:
-        print("No leaf detected")
 
-    last_detected_state = current_state
+def main():
+    ser = initialize_serial()
+    cap = initialize_camera()
+    model = load_model()
 
-    cv2.imshow("Smart AgroSpray - Detection v4", frame)
+    last_detected_state = None
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-cap.release()
-cv2.destroyAllWindows()
-ser.close()
+        boxes = process_frame(frame, model)
+        current_state = draw_boxes(frame, boxes, model)
+
+        # Serial trigger logic
+        if current_state == "Diseased" and last_detected_state != "Diseased":
+            print("⚠ Diseased leaf detected → Sending signal")
+            ser.write(b'1')
+
+        if current_state is None and last_detected_state is not None:
+            print("No leaf detected")
+
+        last_detected_state = current_state
+
+        cv2.imshow("Smart AgroSpray - Detection v5", frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+    ser.close()
+
+
+if __name__ == "__main__":
+    main()
