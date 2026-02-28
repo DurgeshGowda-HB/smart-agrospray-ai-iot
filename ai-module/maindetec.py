@@ -69,13 +69,15 @@ def main():
         current_state = draw_boxes(frame, boxes, model)
 
         # Serial trigger logic
-        if current_state == "Diseased" and last_detected_state != "Diseased":
-            print("⚠ Diseased leaf detected → Sending signal")
-            ser.write(b'1')
-
-        if current_state is None and last_detected_state is not None:
-            print("No leaf detected")
-
+        # ---- Serial trigger logic ----
+        if current_state == "Diseased":
+            if last_detected_state != "Diseased":
+                print("Diseased leaf detected → Sending signal")
+                ser.write(b'1')
+        else:
+            if last_detected_state == "Diseased":
+                print("Leaf cleared → System reset")
+        
         last_detected_state = current_state
 
         cv2.imshow("Smart AgroSpray - Detection v5", frame)
