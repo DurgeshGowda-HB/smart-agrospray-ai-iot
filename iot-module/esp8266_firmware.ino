@@ -12,3 +12,21 @@ void setup() {
   Serial.println("Smart AgroSpray System Ready");
 }
 
+void loop() {
+
+  if (Serial.available()) {
+    char signal = Serial.read();
+
+    if (signal == '1') {
+      Serial.println("Diseased detected → Spraying");
+      digitalWrite(RELAY_PIN, HIGH);
+      delay(2000);  // Spray for 2 seconds
+      
+    }
+
+    else if (signal == '0') {
+      Serial.println("Healthy leaf → No spray");
+     
+    }
+  }
+}
