@@ -21,12 +21,12 @@ void loop() {
       Serial.println("Diseased detected → Spraying");
       digitalWrite(RELAY_PIN, HIGH);
       delay(2000);  // Spray for 2 seconds
-      
+      digitalWrite(RELAY_PIN, LOW);
     }
 
     else if (signal == '0') {
       Serial.println("Healthy leaf → No spray");
-     
+      digitalWrite(RELAY_PIN, LOW);
     }
   }
 }
