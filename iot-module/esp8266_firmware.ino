@@ -10,7 +10,7 @@ void setup() {
 
   Serial.begin(BAUD_RATE);
   Serial.println("Smart AgroSpray System Ready");
-}
+} 
 
 void loop() {
 
