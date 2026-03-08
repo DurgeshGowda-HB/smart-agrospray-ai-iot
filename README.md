@@ -22,6 +22,8 @@ The system uses:
 
 ## 🏗 System Architecture
 
+![image alt](https://github.com/DurgeshGowda-HB/smart-agrospray-ai-iot/blob/a3f3716248d956baff0db2952e8e625b85e61306/images/system_architecture.png.png)
+
 Camera → YOLO Model → Bluetooth → ESP8266 → Relay → Pump
 
 ## 🛠 Tech Stack
