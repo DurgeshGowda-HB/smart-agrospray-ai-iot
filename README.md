@@ -35,6 +35,44 @@ Camera → YOLO Model → Bluetooth → ESP8266 → Relay → Pump
 - Arduino IDE
 - Blynk IoT
 
+## ⚙ Installation
+
+Clone the repository
+
+```
+git clone https://github.com/DurgeshGowda-HB/smart-agrospray-ai-iot.git
+```
+
+Navigate to the project folder
+
+```
+cd smart-agrospray-ai-iot
+```
+
+Install the required dependencies
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## ▶ Running the System
+
+Run the AI detection script
+
+```
+python ai-module/main_detec.py
+```
+
+Make sure:
+
+* The camera is connected
+* The trained YOLO model (`best.pt`) is available
+* The ESP8266 device is connected to the correct serial port
+
+The system will start detecting tomato leaf diseases and trigger pesticide spraying when a diseased leaf is detected.
+
 ## 🔧 Hardware Components
 
 The Smart AgroSpray system integrates computer vision with embedded hardware to perform automated pesticide spraying.
