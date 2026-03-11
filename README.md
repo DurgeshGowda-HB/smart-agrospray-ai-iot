@@ -95,6 +95,30 @@ Main components used:
 6. Relay turns on the pesticide pump to spray the infected plant.
 7. System resets and waits for the next detection cycle.
 
+## 🔌 Hardware Wiring
+
+The hardware components are connected as follows:
+
+- **ESP8266 NodeMCU**
+  - Acts as the main controller for the spraying system.
+
+- **HC-05 Bluetooth Module**
+  - TX → RX (ESP8266)
+  - RX → TX (ESP8266)
+  - Used for communication between the AI detection system and the robot.
+
+- **Relay Module**
+  - IN → GPIO5 (ESP8266)
+  - VCC → 5V
+  - GND → GND
+
+- **Pesticide Pump**
+  - Connected to the relay output.
+  - Activates when a diseased leaf is detected.
+
+- **Power Supply**
+  - Provides power to ESP8266 and pump system.
+
 ## 📊 Performance
 
 - Detection Accuracy: 90–92%
