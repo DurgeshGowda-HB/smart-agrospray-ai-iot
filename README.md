@@ -73,6 +73,33 @@ Make sure:
 
 The system will start detecting tomato leaf diseases and trigger pesticide spraying when a diseased leaf is detected.
 
+## 📁 Project Structure
+
+```
+smart-agrospray-ai-iot/
+│
+├── ai-module/
+│   └── main_detec.py        # YOLO detection and control logic
+│
+├── iot-module/
+│   └── esp8266_firmware.ino # Firmware for ESP8266 spray control
+│
+├── dataset-config/
+│   ├── classes.txt          # Dataset class labels
+│   └── data_custom.yaml     # YOLO dataset configuration
+│
+├── training/
+│   └── train_command.txt    # YOLO training command
+│
+├── docs/                    # Project documentation (reports, papers, etc.)
+│
+├── images/
+│   └── system_architecture.png  # System architecture diagram
+│
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
+```
+
 ## 🔧 Hardware Components
 
 The Smart AgroSpray system integrates computer vision with embedded hardware to perform automated pesticide spraying.
