@@ -100,6 +100,25 @@ smart-agrospray-ai-iot/
 └── README.md                # Project documentation
 ```
 
+## 📊 Dataset
+
+The YOLO model was trained using a tomato leaf disease dataset.
+
+Classes used in the dataset:
+
+- Healthy
+- Diseased
+
+The dataset configuration is defined in:
+
+dataset-config/data_custom.yaml
+
+The class labels are stored in:
+
+dataset-config/classes.txt
+
+This dataset enables the AI model to identify infected tomato leaves and trigger automated pesticide spraying.
+
 ## 🔧 Hardware Components
 
 The Smart AgroSpray system integrates computer vision with embedded hardware to perform automated pesticide spraying.
