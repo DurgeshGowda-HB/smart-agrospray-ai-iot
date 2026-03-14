@@ -171,6 +171,19 @@ The hardware components are connected as follows:
 - Real-time response (<1 second delay)
 - Selective spraying
 
+## 🚀 Future Improvements
+
+Possible future enhancements for the Smart AgroSpray system include:
+
+- Expanding the dataset to support multiple crop diseases.
+- Improving detection accuracy using larger YOLO models.
+- Integrating cloud-based monitoring for farm analytics.
+- Adding GPS-based navigation for autonomous field coverage.
+- Developing a mobile dashboard for real-time monitoring.
+- Implementing edge AI devices for faster inference.
+
+These improvements can make the system more scalable and suitable for large-scale agricultural deployments.
+
 ## 📚 Research Publication
 
 This project is published in:
