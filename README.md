@@ -208,4 +208,8 @@ International Journal of Recent Development in Engineering and Technology (IJRDE
 
 📄 [Read the Research Paper](https://www.ijrdet.com/files/Volume14Issue12/IJRDET_1225_111.pdf)
 
-📜 [Publication Certificate](docs/smart-agrospray-publication-certificate.pdf)
+📜 [Publication Certificate](docs/IJRDET-smart-agrospray-publication-certificate.pdf)
+
+## 📊 Project Poster
+
+![Poster](docs/poster.png)
