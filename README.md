@@ -184,6 +184,21 @@ Possible future enhancements for the Smart AgroSpray system include:
 
 These improvements can make the system more scalable and suitable for large-scale agricultural deployments.
 
+## 📝 Conclusion
+
+Smart AgroSpray demonstrates how artificial intelligence and IoT technologies can be combined to improve agricultural practices.
+
+By using a YOLO-based computer vision model for real-time tomato leaf disease detection and integrating it with an ESP8266-controlled spraying system, the project enables automated and targeted pesticide application.
+
+This approach helps:
+
+- Reduce chemical wastage  
+- Minimize farmer exposure to pesticides  
+- Improve crop health monitoring  
+- Promote precision agriculture  
+
+The system provides a foundation for developing intelligent farming solutions that can support sustainable agriculture in the future.
+
 ## 📚 Research Publication
 
 This project is published in:
