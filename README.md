@@ -202,6 +202,10 @@ The system provides a foundation for developing intelligent farming solutions th
 ## 📚 Research Publication
 
 This project is published in:
-International Journal of Recent Development in Engineering and Technology (Dec 2025)
 
-Certificate included in docs folder.
+**Smart AgroSpray: AI-Driven Precision Pesticide Spraying with IoT**  
+International Journal of Recent Development in Engineering and Technology (IJRDET), Dec 2025
+
+📄 [Read the Research Paper](https://www.ijrdet.com/files/Volume14Issue12/IJRDET_1225_111.pdf)
+
+📜 [Publication Certificate](docs/smart-agrospray-publication-certificate.pdf)
